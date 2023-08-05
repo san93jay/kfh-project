@@ -14,4 +14,8 @@ import java.util.Optional;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long>{
     Optional<Student> findByUsername(String username) throws UsernameNotFoundException;
+
+    boolean existsByUsername(String username);
+
+    boolean existsByEmail(String email);
 }

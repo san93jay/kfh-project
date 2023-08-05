@@ -75,7 +75,7 @@ public class LoginController {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
         } catch (DisabledException e) {
-            throw new Exception("USER_DISABLED", e);
+            throw new Exception("STUDENT_DISABLED", e);
         } catch (BadCredentialsException e) {
             throw new Exception("INVALID_CREDENTIALS", e);
         }
@@ -84,13 +84,13 @@ public class LoginController {
         @PostMapping("/signup")
         public ResponseEntity<?> registerUser(@RequestBody StudentDTO studentDTO) {
             Set<String> strRoles = new HashSet<>();
-         /*   if (StudentRepository.existsByUsername(signUpRequest.getUsername())) {
-                return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
+            if (studentRepository.existsByUsername(studentDTO.getUsername())) {
+                return ResponseEntity.badRequest().body("Username is already use!");
             }
 
-            if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-                return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
-            }*/
+            if (studentRepository.existsByEmail(studentDTO.getEmail())) {
+                return ResponseEntity.badRequest().body("Email is already in use!");
+            }
 
             // Create new user's account
             Student student = new Student(studentDTO.getName(),studentDTO.getUsername(),
