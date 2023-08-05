@@ -92,7 +92,7 @@ public class LoginController {
                 return ResponseEntity.badRequest().body("Email is already in use!");
             }
 
-            // Create new user's account
+            // Create new student's account
             Student student = new Student(studentDTO.getName(),studentDTO.getUsername(),
                     studentDTO.getEmail(),
                     passwordEncoder.encode(studentDTO.getPassword()),
