@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "9774b278-b191-45ef-b851-d7894d67946e",
+		"name": "KFH-Bank-Kuwait",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8864061"
+	},
+	"item": [
+		{
+			"name": "cource-details",
+			"item": [
+				{
+					"name": "add-cource",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update-cource",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5qdSIsImV4cCI6MTY5MTIzNDI0MiwiaWF0IjoxNjkxMjE2MjQyfQ.Cy-J2zlYCQZsojXk6I65WpxunVj5fjFe8yh2BCSXf5--pandWM9LZVdCMrjfQ8lTXa-ALJ63MkoBBY-fYZzTFA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": 2,\r\n    \"courseName\": \"Science\",\r\n    \"fees\": 500000,\r\n    \"courseDuration\": \"1 months\",\r\n    \"courseStartDate\": \"08-10-2023\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/courses/updateCourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"courses",
+								"updateCourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-cources",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete-cource-byId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYW5qdSIsImV4cCI6MTY5MTE3ODU1MCwiaWF0IjoxNjkxMTYwNTUwfQ.ZPtRvSeGUF_s1fn3jihcEqb5KG3JDv6L2xVUI8LIRAFaetOLoVIuUwWkaNzGrBjgArGB8gv07XiVPsEBTwkAXg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/cources/deleteById/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cources",
+								"deleteById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cource-Allocation",
+			"item": [
+				{
+					"name": "getStudentWithCourses",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "allocation-student",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateCourseForOneStudent",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete-student-by -id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "add Student",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"sanjay\",\r\n    \"username\":\"sanju\",\r\n    \"email\":\"sv17893@gmail.com\",\r\n    \"password\":\"Welcome@123\",\r\n    \"age\":30,\r\n    \"contactNumber\":\"6363262363\",\r\n    \"role\":\"ROLE_USER\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/student/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"student",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-roles",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "student-login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "swagger",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
